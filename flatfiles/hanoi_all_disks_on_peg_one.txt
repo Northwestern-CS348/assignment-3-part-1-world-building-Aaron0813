@@ -48,7 +48,7 @@ fact: (top disk1 peg1)
 fact: (empty peg2)
 fact: (empty peg3)
 
-rule: ((top ?disk ?peg)) -> (on ?disk ?peg)
+rule: ((inst ?disk disk) (inst ?peg peg) (top ?disk ?peg)) -> (on ?disk ?peg)
 rule: ((above ?disk1 ?disk2) (on ?disk2 ?peg)) -> (on ?disk1 ?peg)
 rule: ((larger ?disk1 ?disk2) (larger ?disk2 ?disk3) -> (larger ?disk1 ?disk3))
 rule: ((top ?disk ?initial) (empty ?target) -> (movable ?disk ?initial ?target))
